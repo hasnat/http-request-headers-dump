@@ -16,7 +16,7 @@ js_import /usr/local/njs_print_headers.js;\n\
   }\n\
 }' > /etc/nginx/nginx.conf 
 
-RUN echo -e 'const skipHeaders = (process.env.UPSTREAM_PORT || '').split(',').map(e => e.toLowerCase()) \n\
+RUN echo -e 'const skipHeaders = (process.env.HIDE_HEADERS || '').split(',').map(e => e.toLowerCase()) \n\
 export default function njs_print_headers(r) {\n\
   r.headersOut["Content-Type"] = "text/plain";\n\
   var headers = "";\n\
