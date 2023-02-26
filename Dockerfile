@@ -23,7 +23,7 @@ js_import headers_dump from /usr/local/headers_dump.js;\n\
 RUN echo -e '\n\
 \n\
 const hide_headers = (process.env.HIDE_HEADERS || "").split(",").map(e => e.toLowerCase()) \n\
-export default {njs_print_headers,favicon};\n\
+export default {njs_print_headers,fav_icon};\n\
 var fav_icon_bytes = Buffer.from("AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAXZkAAPPz8wCeDgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMzMzMzAAADIiIiIiMAAAMhEhERIwAAAyIiIiIjAAADIRIRESMAAAMiIiIiIwAAAyESEREjAAADIiIiIiMAAAMhEhERIwAAAyIiIiIjAAADIRIRESMAAAMiIiIzMwAAAyESETIwAAADIiIiMwAAAAMzMzMwAAD//wAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AcAAOAPAADgHwAA", "base64");\n\
 function fav_icon(r) {\n\
   return r.return(200, favIconBytes);\n\
