@@ -1,12 +1,12 @@
-# http-request-headers-dump
+# request-headers-dump
 
-[Docker Hub Registry: hasnat/http-request-headers-dump](https://hub.docker.com/r/hasnat/http-request-headers-dump)
+[Docker Hub Registry: hasnat/request-headers-dump](https://hub.docker.com/r/hasnat/request-headers-dump)
 
 Dumps request headers 
 
 ```
 
-$ docker run -it -d --name http-request-headers-dump hasnat/http-request-headers-dump
+$ docker run -it -d --name http-request-headers-dump hasnat/request-headers-dump
 
 $ curl http://127.0.0.1:8080
 Host: 127.0.0.1:8080
