@@ -1,5 +1,5 @@
 FROM nginx:alpine
-ENV HIDE_HEADERS
+ENV HIDE_HEADERS=""
 RUN echo -e '\n\
 \n\
 load_module /usr/lib/nginx/modules/ngx_http_js_module.so;\n\
