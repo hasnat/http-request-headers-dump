@@ -1,6 +1,6 @@
 # http-request-headers-dump
 
-(Docker Hub Registry hasnat/http-request-headers-dump)[https://hub.docker.com/r/hasnat/http-request-headers-dump]
+[Docker Hub Registry: hasnat/http-request-headers-dump](https://hub.docker.com/r/hasnat/http-request-headers-dump)
 
 Dumps request headers 
 
