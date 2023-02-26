@@ -6,9 +6,13 @@ Dumps request headers
 
 ```
 
-$ docker run -it -d --name http-request-headers-dump hasnat/request-headers-dump
+$ docker run -it -d \
+  --name request-headers-dump \
+  -e HIDE_HEADERS=X-Real-IP,X-Forwarded-For,X-Forwarded-Proto,X-Forwarded-Ssl,X-Forwarded-Port \
+  hasnat/request-headers-dump
 
 $ curl http://127.0.0.1:8080
+
 Host: 127.0.0.1:8080
 User-Agent: curl/7.86.0
 Accept: */*
