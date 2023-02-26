@@ -26,7 +26,7 @@ const hide_headers = (process.env.HIDE_HEADERS || "").split(",").map(e => e.toLo
 export default {njs_print_headers,fav_icon};\n\
 var fav_icon_bytes = Buffer.from("AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAXZkAAPPz8wCeDgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMzMzMzAAADIiIiIiMAAAMhEhERIwAAAyIiIiIjAAADIRIRESMAAAMiIiIiIwAAAyESEREjAAADIiIiIiMAAAMhEhERIwAAAyIiIiIjAAADIRIRESMAAAMiIiIzMwAAAyESETIwAAADIiIiMwAAAAMzMzMwAAD//wAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AcAAOAPAADgHwAA", "base64");\n\
 function fav_icon(r) {\n\
-  return r.return(200, favIconBytes);\n\
+  return r.return(200, fav_icon_bytes);\n\
 }\n\
 function njs_print_headers(r) {\n\
   r.headersOut["Content-Type"] = "text/plain";\n\
