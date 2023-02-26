@@ -1,8 +1,9 @@
 FROM nginx:alpine
-
+ENV HIDE_HEADERS
 RUN echo -e '\n\
 \n\
 load_module /usr/lib/nginx/modules/ngx_http_js_module.so;\n\
+env HIDE_HEADERS;\n\
 events {\n  worker_connections  1024;\n}\n\
 http {\n\
 js_import /usr/local/njs_print_headers.js;\n\
@@ -15,10 +16,12 @@ js_import /usr/local/njs_print_headers.js;\n\
   }\n\
 }' > /etc/nginx/nginx.conf 
 
-RUN echo -e 'export default function njs_print_headers(r) {\n\
+RUN echo -e 'const skipHeaders = (process.env.UPSTREAM_PORT || '').split(',').map(e => e.toLowerCase()) \n\
+export default function njs_print_headers(r) {\n\
   r.headersOut["Content-Type"] = "text/plain";\n\
   var headers = "";\n\
   for (var header in r.headersIn) {\n\
+    if (!skipHeaders.includes(header.toLowerCase())) \n\
     headers += header + ": " + r.headersIn[header] + "\\n\
 ";\n\
   }\n\
