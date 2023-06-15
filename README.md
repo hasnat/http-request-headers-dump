@@ -8,7 +8,7 @@ Dumps request headers
 
 $ docker run -it -d \
   --name request-headers-dump \
-  -p 8080:8080
+  -p 8080:8080 \
   -e HIDE_HEADERS=X-Real-IP,X-Forwarded-For,X-Forwarded-Proto,X-Forwarded-Ssl,X-Forwarded-Port \
   hasnat/request-headers-dump
 
