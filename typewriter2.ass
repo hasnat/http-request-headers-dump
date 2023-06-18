@@ -1,0 +1,12 @@
+[Script Info]
+; Comment with ";"
+ScriptType: v4.00+
+
+[V4+ Styles]
+Format: Name,  Fontname,  Fontsize,  PrimaryColour,  SecondaryColour,  OutlineColour,  BackColour,  Bold,  Italic,  Underline,  StrikeOut,  ScaleX,  ScaleY,  Spacing,  Angle,  BorderStyle,  Outline,  Shadow,  Alignment,  MarginL,  MarginR,  MarginV,  Encoding
+Style: style1,  Arial,  30,  &H00FFFFFF, &HFF0000FF, &HFF000000, &H00000000, 0, 0, 0, 0, 100, 100, 0, 0, 1, 0, 0, 7, 20, 20, 20, 1
+
+
+[Events]
+Format: Layer,  Start,  End,  Style,  Name,  MarginL,  MarginR,  MarginV,  Effect,  Text
+Dialogue: 0, 0:00:00.5, 0:00:12.00, style1, , 0, 0, 0, , {\k25}L{\k10}e{\k25}t{\k10}'{\k15}s{\k25} {\k25}t{\k10}r{\k25}y{\k25} {\k10}t{\k20}o{\k20} {\k25}c{\k15}r{\k15}e{\k25}a{\k15}t{\k15}e{\k25} {\k25}a{\k10} {\k20}t{\k20}y{\k10}p{\k20}e{\k25} {\k15}w{\k15}r{\k25}i{\k15}t{\k15}e{\k15}r{\k15} {\k20}t{\k10}e{\k10}x{\k15}t{\k20} {\k20}r{\k20}a{\k20}p{\k10}i{\k10}d{\k15}l{\k20}y{\k25}
