@@ -23,9 +23,10 @@ js_import headers_dump from /usr/local/headers_dump.js;\n\
 
 RUN echo -e '\n\
 \n\
-const hide_headers = (process.env.HIDE_HEADERS || "").split(",").map(e => e.toLowerCase()) \n\
-var headers_out = "";
-try { (process.env.RESPONSE_HEADERS || "").split("\\n").map(e => {var hdr = e.split(":"); return [[hdr[0]],hdr[1].trim()])} catch(e){} \n\
+const hide_headers = (process.env.HIDE_HEADERS || "").split(",").map(h => h.toLowerCase()) \n\
+var headers_out = (process.env.RESPONSE_HEADERS || "").split("\\n").map(h => { \n\
+ try { var hdr = h.split(":"); return [hdr[0].trim(),hdr[1].trim()]; } catch(e){} \n\
+});\n\
 export default {njs_print_headers,fav_icon};\n\
 var fav_icon_bytes = Buffer.from("AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAXZkAAPPz8wCeDgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzMzMzMzAAADIiIiIiMAAAMhEhERIwAAAyIiIiIjAAADIRIRESMAAAMiIiIiIwAAAyESEREjAAADIiIiIiMAAAMhEhERIwAAAyIiIiIjAAADIRIRESMAAAMiIiIzMwAAAyESETIwAAADIiIiMwAAAAMzMzMwAAD//wAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AcAAOAPAADgHwAA", "base64");\n\
 function fav_icon(r) {\n\
