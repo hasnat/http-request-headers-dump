@@ -5,6 +5,7 @@ RUN echo -e '\n\
 \n\
 load_module /usr/lib/nginx/modules/ngx_http_js_module.so;\n\
 env HIDE_HEADERS;\n\
+env RESPONSE_HEADERS;\n\
 events {\n  worker_connections  1024;\n}\n\
 http {\n\
 js_import headers_dump from /usr/local/headers_dump.js;\n\
@@ -33,7 +34,7 @@ function fav_icon(r) {\n\
   return r.return(200, fav_icon_bytes);\n\
 }\n\
 function njs_print_headers(r) {\n\
-  headers_out.map(h => {r.headersOut[h[0]] = h[1];})
+  headers_out.map(h => {r.headersOut[h[0]] = h[1];}) \n\
   r.headersOut["Content-Type"] = "text/plain";\n\
   var headers = "";\n\
   for (var header in r.headersIn) {\n\
