@@ -13,7 +13,7 @@ $ docker run -it -d \
   -e HIDE_HEADERS=X-Real-IP,X-Forwarded-For,X-Forwarded-Proto,X-Forwarded-Ssl,X-Forwarded-Port \
   hasnat/request-headers-dump
 
-$ $ curl -vvv http://127.0.0.1:8080
+$ curl -vvv http://127.0.0.1:8080
 
 
 
