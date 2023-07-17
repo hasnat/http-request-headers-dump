@@ -1,0 +1,28 @@
+version: '2.4'
+services:
+  request-headers-dump:
+    #image: hasnat/request-headers-dump
+    build: .
+    container_name: request-headers-dump
+    environment:
+      RESPONSE_HEADERS: "Accept-CH: Sec-CH-UA-Model\nX-Real-Hero: You!"
+      HIDE_HEADERS: "X-Real-IP,X-Forwarded-For,X-Forwarded-Proto,X-Forwarded-Ssl,X-Forwarded-Port"
+    ports:
+      - "8080:8080"
+
+  media-generator:
+    build: media-generator
+    #    platform: linux/amd64
+    container_name: media-generator
+    ports:
+      - "8089:8080"
+    volumes:
+      - "./media-generator/outputs:/app/outputs"
+    entrypoint: "shell2http \
+    -export-all-vars -cgi -one-thread -no-index \
+    POST:/generate-m4v 'GEN_TYPE=m4v /app/run.sh' \
+    POST:/generate-gif 'GEN_TYPE=gif /app/run.sh' \
+    POST:/generate-m4a 'GEN_TYPE=m4a /app/run.sh' \
+    POST:/generate-jpg 'GEN_TYPE=jpg /app/run.sh'"
+    environment:
+      GEN_TYPE: "m4v"
