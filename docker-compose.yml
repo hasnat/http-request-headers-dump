@@ -9,8 +9,8 @@ services:
       HIDE_HEADERS: "X-Real-IP,X-Forwarded-For,X-Forwarded-Proto,X-Forwarded-Ssl,X-Forwarded-Port"
       VIRTUAL_HOST: "request-headers-dump${ENV_DOMAIN}"
       VIRTUAL_PORT: "8080"
-#    ports:
-#      - "8080:8080"
+    ports:
+      - "8080:8080"
 
 
   media-generator:

@@ -1,6 +1,6 @@
 var fs = require('fs')
-const hide_headers = []||(process.env.HIDE_HEADERS || "").split(",").map(h => h.toLowerCase())
-var headers_out = []||(process.env.RESPONSE_HEADERS || "").split("\\n").map(h => {
+const hide_headers = (process.env['HIDE_HEADERS'] || "").split(",").map(h => h.toLowerCase())
+var headers_out = (process.env['RESPONSE_HEADERS'] || "").split("\n").map(h => {
  try { var hdr = h.split(":"); return [hdr[0].trim(),hdr[1].trim()]; } catch(e){}
 });
 
