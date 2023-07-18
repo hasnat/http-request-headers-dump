@@ -2,7 +2,7 @@
 #set -e
 
 
-OUT="$(mktemp $OUTPUT_DIR/output.XXXXXXXXXX.gif)"
+OUT="$TEMP_DIR/output.gif"
 
 ffmpeg \
   -nostats  -hide_banner -loglevel panic \

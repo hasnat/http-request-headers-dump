@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #set -e
 
-OUT="$(mktemp $OUTPUT_DIR/output.XXXXXXXXXX.m4v)"
+OUT="$TEMP_DIR/output.m4v"
 
 ffmpeg \
   -nostats  -hide_banner -loglevel panic \

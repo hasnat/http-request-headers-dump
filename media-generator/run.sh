@@ -2,17 +2,17 @@
 #set -exou pipefail
 # ^ for debugging
 GEN_TEXT="$(</dev/stdin)"
-OUTPUT_DIR=./outputs
-mkdir -p $OUTPUT_DIR
 
 
-TXT_FILE="$(mktemp $OUTPUT_DIR/output.XXXXXXXXXX.txt)"
+
+TEMP_DIR="$(mktemp -d)"
+TXT_FILE="$TEMP_DIR/TXT_FILE.txt"
 echo "$GEN_TEXT" > $TXT_FILE
 case "$GEN_TYPE" in
 
   m4a)
 
-    TXT_FILE="$TXT_FILE" OUTPUT_DIR="$OUTPUT_DIR" ./run-m4a.sh
+    TEMP_DIR="$TEMP_DIR" TXT_FILE="$TXT_FILE" ./run-m4a.sh
 
     ;;
 
@@ -21,7 +21,7 @@ case "$GEN_TYPE" in
     echo "$GEN_TEXT" | fold -w 90  > "$TXT_FILE"
 
 
-    TXT_FILE="$TXT_FILE" OUTPUT_DIR="$OUTPUT_DIR" ./run-$GEN_TYPE.sh
+    TEMP_DIR="$TEMP_DIR" TXT_FILE="$TXT_FILE" ./run-$GEN_TYPE.sh
 
     ;;
 
@@ -30,4 +30,4 @@ case "$GEN_TYPE" in
     echo -n "unknown"
     ;;
 esac
-rm $TXT_FILE
+rm -r $TEMP_DIR
