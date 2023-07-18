@@ -93,6 +93,6 @@ Accept: */*
 
 # preview
 image preview thumbnail
-![image](https://raw.githubusercontent.com/hasnat/request-headers-dump/media-dump/Screenshot 2023-07-18 at 10.44.37 p.m..png)
+![image](https://github.com/hasnat/request-headers-dump/blob/bc20716b3461adbee431b9ec13c1c649feee27e9/Screenshot%202023-07-18%20at%2010.44.37%20p.m..png)
 
 
